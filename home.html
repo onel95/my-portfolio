@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onel Hirmez</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-print.css" media="print">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <section class="menu-icon">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </section>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home.html">
+                <figure>
+                  <img src="images/headShot.jpeg" alt="Onel Hirmez" class="profile-photo nav-link">
+                  <figcaption class="caption nav-link">Onel Hirmez</figcaption>
+                </figure>
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills.html">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#classes.html">classes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+    <main>
+      <section id="home.html" class="home.html">
+        <div class="container">
+          <article class="introduction">
+            <h2>Onel Hirmez</h2>
+            <h3>Software Developer</h3>
+            <p>
+              Welcome to my software engineering portfolio!
+            </p> 
+            <div class="intro-buttons">
+              <button class="btn" >
+                <a href="#contact.html" class="btn-link">Reach Out</a>
+              </button>
+              <button class="btn" >
+                <a href="#projects.html" class="btn-link">My Projects</a>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="about.html" class="about.html">
+        <div class="container">
+          <figure class="about-photo">
+            <img src="Images/headShot.jpeg" alt="Onel Hirmez">
+          </figure>
+          <article class="about-text">
+            <h2>Hi There!</h2>
+            <p>
+              My name is Onel and I am a current Software Development
+              graduate student at Boston University. I received my BS in Physics from
+              University of California, Davis and worked as a research assistant for a
+              year and a half before I fell in love with software development! Since
+              then I have been teaching myself how to code. This eventually led me to
+              pursue a Master's degree to gain more knowledge on the process of
+              creating and maintaining good software. My goal is to become a Full
+              Stack software developer when I graduate this coming February.
+            </p>
+      
+            <p>
+              Besides coding, I love working out and staying healthy, playing Tennis, Soccer 
+              and photography. One hobby I recently picked up has been
+              making a mean latte cup! During quarantine, I
+              have been focusing on getting out into nature and have been going off-roading 
+              with my Jeep more frequently.
+            </p>
+      
+            <p>
+              Learn more about me on my LinkedIn profile here:
+              <a href="https://www.linkedin.com/in/onelhirmez/" target="_blank">LinkedIn Profile</a>
+            </p>
+          </article>
+        </div>
+        <hr>
+      </section>
+      <section id="skills.html" class="skills.html">
+        <div class="container">
+          <article class="heading">
+            <h2>My Top Skills</h2>
+            <p>
+              I have worked with many different aspects of software engineering that range 
+              from database design all the way to creating a front-end website like this one.
+            </p>
+          </article>
+          <article class="technologies">
+            <div class="tech-item">
+              <h2>Web Development</h2>
+              <p>HTML, CSS, JavaScript, AJAX, Vue.js, React</p>
+            </div>
+            <div class="tech-item">
+              <h2>Backend</h2>
+              <p>Python (Django), Django REST Framework, Java</p>
+            </div>
+            <div class="tech-item">
+              <h2>Database</h2>
+              <p>SQL (SQL Server)</p>
+            </div>
+          </article>
+        </div>
+        <hr>
+      </section>
+      <section id="projects.html" class="projects.html">
+        <div class="heading">
+          <h2>My Projects</h2>
+          <p>Some of my projects are shown below.</p>
+        </div>
+        <div class="project-item">
+          <article class="project-description">
+            <h2>Todo List Tracker</h2>
+            <p>This project is a todo application that I created using the Python Django framework.</p>
+            <a href="https://github.com/onel95/TodoList-Django" class="project-link" target="_blank">Show Source Code</a>
+          </article>
+        </div>
+        <div class="project-item">
+          <article class="project-description right-margin">
+            <h2>Weather App</h2>
+            <p>This is an application that uses the open weather API to display weather in the chosen location.</p>
+          </article>
+          <figure class="project-photo">
+            <video
+              src="Videos/weatherDemo.mp4"
+              controls
+              width="320"
+              height="180"
+            ></video>
+          </figure>
+        </div>
+        <div class="project-item">
+          <article class="project-description">
+            <h2>Shortest Path Finder</h2>
+            <p>This is a Java program that takes in a weighted graph and finds the shortest path to a given destination node using two different algorithms.</p>
+            <a href="https://github.com/onel95/Shortest-Path-Finder" class="project-link" target="_blank">Show Source Code</a>
+          </article>
+        </div>
+        <hr>
+      </section>
+      <section id="classes.html" class="classes.html">
+        <article class="heading">
+          <h2>My Courses</h2>
+          <p>These are the classes I've taken so far.</p>
+        </article>
+        <section class="ajax-info">
+          <button class="show-info" onclick="runClick()">View classes</button>
+          <table id="class-table" class="class-table"></table>
+        </section>
+        <hr>
+      </section>
+      <section id="contact.html" class="contact.html">
+        <article class="heading">
+          <h2>Say Hello!</h2>
+          <p>Contact me through any of the links shown below. I am always happy to get in touch!</p>
+          <img src="Images/contact-photo.jpg" alt="Onel Hirmez" class="contact-photo">
+        </article>
+        <section class="contact-info">
+          <ul class="contact-list">
+            <li class="contact-item"> <a href="mailto:ohirmez@gmail.com" class="contact-link">ohirmez@gmail.com</a></li>
+            <li class="contact-item"><a href="https://www.linkedin.com/in/onelhirmez/" class="contact-link" target="_blank">LinkedIn</a></li>
+            <li class="contact-item"><a href="https://github.com/onel95/" class="contact-link" target="_blank">GitHub</a></li>
+          </ul>
+        </section>
+        <hr>
+      </section>
+      <footer>
+        <section class="footer-nav">
+          <a href="#home.html" class="nav-link-footer">Home</a>
+          <a href="#about.html" class="nav-link-footer">About Me</a>
+          <a href="#skills.html" class="nav-link-footer">Skills</a>
+          <a href="#projects.html" class="nav-link-footer">Projects</a>
+          <a href="#classes.html" class="nav-link-footer">Classes</a>
+          <a href="#contact.html" class="nav-link-footer">Contact</a>
+        </section>
+        <article class="footer-comments">
+          <p>This page was made by Onel Hirmez using HTML, CSS, JavaScript and Vue.js</p>
+        </article>
+      </footer>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

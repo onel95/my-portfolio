@@ -1,0 +1,63 @@
+{
+    "my_classes" : [
+        {
+            "class" : {
+                "title" : "Intro to Software Development",
+                "grade" : "A",
+                "semester" : "Fall",
+                "year" : 2019
+            }
+        },
+        {
+            "class" : {
+                "title" : "Information Structures with Python",
+                "grade" : "A",
+                "semester" : "Spring",
+                "year" : 2020
+            }
+        },
+        {
+            "class" : {
+                "title" : "Data Structures and Algorithms",
+                "grade" : "A",
+                "semester" : "Spring",
+                "year" : 2020
+            }
+        },{
+            "class" : {
+                "title" : "Advanced Programming Techniques",
+                "grade" : "A-",
+                "semester" : "Summer",
+                "year" : 2020
+            }
+        },{
+            "class" : {
+                "title" : "Software Design and Patterns",
+                "grade" : "B+",
+                "semester" : "Summer",
+                "year" : 2020
+            }
+        },{
+            "class" : {
+                "title" : "Information Systems and Analysis",
+                "grade" : "A",
+                "semester" : "Fall",
+                "year" : 2020
+            }
+        },{
+            "class" : {
+                "title" : "Database Design and Implementation",
+                "grade" : "TBD",
+                "semester" : "Fall",
+                "year" : 2020
+            }
+        },{
+            "class" : {
+                "title" : "Web Application Development",
+                "grade" : "TBD",
+                "semester" : "Fall",
+                "year" : 2020
+            }
+        }
+    ]
+}

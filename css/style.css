@@ -1,0 +1,483 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Times New Roman", Times, sans-serif, serif;
+  font-size: 16pt;
+  color: burlywood;
+  background-color: black;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.line1 {
+  width: 25px;
+  height: 2px;
+  margin: 5px 0;
+  background: linear-gradient(
+    120deg,
+    rgb(71, 29, 3) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.line2 {
+  width: 25px;
+  height: 2px;
+  background: linear-gradient(
+    120deg,
+    rgb(71, 29, 3) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.line3 {
+  width: 25px;
+  height: 2px;
+  margin: 5px 0;
+  background: linear-gradient(
+    120deg,
+    rgb(71, 29, 3) 0%,
+    rgb(255, 255, 255) 100%
+  );
+}
+
+.menu-icon {
+  cursor: pointer;
+  z-index: 999;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgba(51, 48, 48, 0.5);
+  padding: 1.3rem;
+  border-radius: 0% 0% 0% 35%;
+}
+
+.profile-photo {
+  height: 10rem;
+  width: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.caption {
+  display: block;
+}
+
+.nav-list {
+  width: 23rem;
+  height: 100vh;
+  background-color: #201d1d;
+  position: fixed;
+  top: 0;
+  right: -26rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: start;
+  z-index: 998;
+  transition: all 500ms ease-in-out;
+}
+
+.nav-list.active {
+  right: 0;
+}
+
+.nav-item {
+  margin: 1.2rem 0;
+}
+
+.nav-link {
+  opacity: 1;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #afa9a9;
+  letter-spacing: 1.3px;
+}
+
+.nav-link:hover {
+  color: rgb(245, 117, 38);
+}
+
+.switch {
+  background: none;
+}
+
+.switch .line1 {
+  width: 16px;
+  transform: rotate(-45deg) translate(-5px, 6px) scaleX(2);
+}
+
+.switch .line2 {
+  opacity: 0;
+}
+
+.switch .line3 {
+  width: 16px;
+  transform: rotate(45deg) translate(-5px, -6px) scaleX(2);
+  margin-left: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+/***** Home page styling. *****/
+
+.home\.html {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    120deg,
+    rgba(6, 24, 27, 0.9) 0%,
+    rgba(46, 39, 39, 0.8) 100%
+  );
+}
+
+.introduction {
+  width: 100%;
+  max-width: 59rem;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.introduction h2 {
+  letter-spacing: 1.3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 28ch;
+  margin: auto;
+}
+
+.introduction h3 {
+  font-size: 3rem;
+  margin: 1rem 0;
+  color: rgb(245, 117, 38);
+}
+
+.introduction p {
+  text-transform: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.intro-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 0 17px;
+  background: rgb(1, 59, 59);
+  border-radius: 2rem;
+  color: #fafafa;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+  margin-top: 2rem;
+  transition: background-color 500ms;
+  font-weight: 400;
+  font-size: 11pt;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  color: #fafafa;
+  background-color: rgb(245, 117, 38);
+}
+
+/* About page styling. */
+
+.about\.html {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.about\.html .container {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.about-photo img {
+  height: 12rem;
+  width: auto;
+  border-radius: 50%;
+  margin: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+hr {
+  margin: 4rem 0;
+  background: linear-gradient(
+    to right,
+    rgba(7, 29, 32, 0.9) 0%,
+    rgba(77, 64, 64, 0.8) 100%
+  );
+  border: 0;
+  height: 2px;
+}
+
+/***** Skills page styling. *****/
+
+.skills\.html {
+  padding: 3rem 0;
+  min-height: 100vh;
+  max-width: 90rem;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.heading h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0 1 0;
+}
+
+.heading p {
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 5rem;
+}
+
+.technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+
+.tech-item {
+  height: 16rem;
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tech-item h2 {
+  color: rgb(245, 117, 38);
+}
+
+/* This is projects page styling. */
+
+.projects\.html {
+  padding: 3rem 0;
+  min-height: 100vh;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.right-margin {
+  margin: 0 6rem 0 0;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem 5rem 1.5rem;
+}
+
+.project-photo {
+  flex: 1;
+}
+
+.project-description {
+  flex: 1;
+}
+
+.project-description h2 {
+  font-size: 2rem;
+  margin: 1.7rem 0;
+  color: rgb(245, 117, 38);
+}
+
+.project-description p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin: 2rem 0;
+  font-size: 1.4rem;
+}
+
+/***** This is the classes page styling. *****/
+
+.classes\.html {
+  padding: 3rem 0;
+  min-height: 100vh;
+  max-width: 70rem;
+}
+
+.ajax-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.show-info {
+  background-color: peru;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+}
+
+.show-info:hover {
+  background-color: white;
+}
+
+.class-table {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+  display: table;
+  height: 20px;
+}
+
+th {
+  background-color: darkgrey;
+  color: peru;
+}
+
+th,
+td {
+  padding: 5px;
+  border-bottom: 1px solid;
+  border-color: antiquewhite;
+}
+
+tr:hover {
+  background-color: white;
+}
+
+.classes\.html hr {
+  margin-top: 21rem;
+  background: linear-gradient(
+    to right,
+    rgba(7, 29, 32, 0.9) 0%,
+    rgba(77, 64, 64, 0.8) 100%
+  );
+  border: 0;
+  height: 2px;
+}
+
+/***** This is the contact page styling. *****/
+
+.contact\.html {
+  text-align: center;
+}
+
+.contact-list {
+  min-height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact-item {
+  font-size: 20pt;
+}
+
+.contact-photo {
+  height: 20rem;
+  width: auto;
+  border-radius: 10%;
+  margin: 1.5rem 0;
+}
+
+a {
+  color: coral;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #222222;
+}
+
+footer {
+  width: 100%;
+  max-width: 70rem;
+  margin: auto;
+  padding: 2rem;
+  color: #6d6969;
+  text-align: center;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.nav-link-footer {
+  margin: 0 0.5rem;
+}
+
+.footer-comments {
+  margin: 2rem 0;
+}
