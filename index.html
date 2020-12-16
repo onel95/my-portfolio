@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/style-print.css" media="print">
   </head>
   <body>
+    <!-- This is the development veersion of Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <header>
       <div class="container">
         <nav>
@@ -35,6 +38,8 @@
       </div>
   </header>
     <main>
+
+      <!-- The home page is below and that is the first page on the site. -->
       <section id="home.html" class="home.html">
         <div class="container">
           <article class="introduction">
@@ -54,6 +59,8 @@
           </article>
         </div>
       </section>
+
+      <!-- The about page is below.-->
       <section id="about.html" class="about.html">
         <div class="container">
           <figure class="about-photo">
@@ -88,6 +95,8 @@
         </div>
         <hr>
       </section>
+
+      <!-- The skills page is shown below.-->
       <section id="skills.html" class="skills.html">
         <div class="container">
           <article class="heading">
@@ -114,6 +123,8 @@
         </div>
         <hr>
       </section>
+
+      <!-- Below is the projects page.-->
       <section id="projects.html" class="projects.html">
         <div class="heading">
           <h2>My Projects</h2>
@@ -149,6 +160,8 @@
         </div>
         <hr>
       </section>
+
+      <!-- The classes page is below.-->
       <section id="classes.html" class="classes.html">
         <article class="heading">
           <h2>My Courses</h2>
@@ -160,20 +173,110 @@
         </section>
         <hr>
       </section>
+
+      <!-- Below is the contact page.-->
       <section id="contact.html" class="contact.html">
         <article class="heading">
           <h2>Say Hello!</h2>
-          <p>Contact me through any of the links shown below. I am always happy to get in touch!</p>
+          <p>Contact me through the form or any of the links shown below. I am always happy to get in touch!</p>
           <img src="Images/contact-photo.jpg" alt="Onel Hirmez" class="contact-photo">
         </article>
-        <section class="contact-info">
-          <ul class="contact-list">
-            <li class="contact-item"> <a href="mailto:ohirmez@gmail.com" class="contact-link">ohirmez@gmail.com</a></li>
-            <li class="contact-item"><a href="https://www.linkedin.com/in/onelhirmez/" class="contact-link" target="_blank">LinkedIn</a></li>
-            <li class="contact-item"><a href="https://github.com/onel95/" class="contact-link" target="_blank">GitHub</a></li>
-          </ul>
-        </section>
-        <hr>
+
+        <section class="contact-form">
+        <form
+        id="app"
+        @submit="checkForm"
+        action="mailto:ohirmez@gmail.com"
+        enctype="multipart/form-data"
+        method="post"
+        >
+          <p v-if="errors.length > 0">
+            <b>Please correct the following error(s) before submitting:</b>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </p>
+
+          <p>
+            <label for="name">Name</label>
+            <input
+              id="name"
+              v-model="name"
+              type="text"
+              name="name"
+            >
+          </p>
+
+          <p>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              v-model="email"
+              type="text"
+              name="email"
+            >
+          </p>
+
+          <p id="third-row">
+            <label for="subject">Subject</label>
+            <input 
+              id="subject" 
+              v-model="subject"
+              type="textarea"
+              name="subject"
+            >
+          </p>
+
+          <p>
+            <input
+              type="submit"
+              value="Submit"
+            >
+          </p>
+        </form>
+
+        <!-- Below is the Vue instance that contains the above form validations.-->
+        <script>
+          const app = new Vue({
+            el: '#app',
+            data: {
+              errors: [],
+              firstname: null,
+              lastname: null,
+              subject: null
+            },
+            methods:{
+              checkForm: function (e) {
+                if (this.name && this.email) {
+                  return true;
+                }
+
+                this.errors = [];
+          
+                if (!this.name) {
+                  this.errors.push('Please enter your name.');
+                }
+                if (!this.email) {
+                  this.errors.push('Please enter your email address.');
+                }
+                if (!this.subject) {
+                  this.errors.push('Please enter a subject.');
+                }
+                e.preventDefault();
+              }
+            }
+          })
+        </script>
+
+      </section>
+      <section class="contact-info">
+        <ul class="contact-list">
+          <li class="contact-item"> <a href="mailto:ohirmez@gmail.com" class="contact-link">ohirmez@gmail.com</a></li>
+          <li class="contact-item"><a href="https://www.linkedin.com/in/onelhirmez/" class="contact-link" target="_blank">LinkedIn</a></li>
+          <li class="contact-item"><a href="https://github.com/onel95/" class="contact-link" target="_blank">GitHub</a></li>
+        </ul>
+      </section>
+      <hr>
       </section>
       <footer>
         <section class="footer-nav">

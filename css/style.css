@@ -434,6 +434,20 @@ tr:hover {
   text-align: center;
 }
 
+.contact-form {
+  display: inline-block;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.contact-form input {
+  margin: 0.5rem 0;
+}
+
+#third-row {
+  transform: translate(-0.5rem, 0);
+}
+
 .contact-list {
   min-height: 50vh;
   display: flex;

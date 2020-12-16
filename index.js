@@ -1,24 +1,15 @@
-let selectElement = (s) => document.querySelector(s);
-let links = document.querySelectorAll(".nav-link");
-
-selectElement(".menu-icon").addEventListener("click", () => {
-    selectElement(".nav-list").classList.toggle("active");
-    selectElement(".menu-icon").classList.toggle("switch");
-});
-
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        selectElement(".nav-list").classList.toggle("active");
-        selectElement(".menu-icon").classList.toggle("switch");
-    });
-});
-
+// flag variable to only allow ajax call once so classes 
+// table doesn't keep on repeating.
+var clicked = false;
 
 // Starts the program logic when the button is clicked.
 function runClick() {
     var httpRequest;
-    document.getElementById("show-info").onclick = 
-    sendRequest("myClasses.json");
+    if (!clicked) {
+        clicked = true;
+        document.getElementById("show-info").onclick = 
+        sendRequest("myClasses.json");
+    }
 
 // Checks validity of request and its status and sends it.
 function sendRequest(url) {
@@ -51,54 +42,74 @@ function sendRequest(url) {
         } 
     };
 
-// This function populates the table and injects it into the HTML.
-function displayTable() {
-    // Parse the JSON file.
-    let myArray = JSON.parse(httpRequest.responseText).my_classes;
+    // This function populates the table and injects it into the HTML.
+    function displayTable() {
+        // Parse the JSON file.
+        let myArray = JSON.parse(httpRequest.responseText).my_classes;
 
-    // Refer to the table tag.
-    let table = document.getElementById("class-table");
-    // Create the table elements for the header of the table.
-    let tr = document.createElement("tr");
-    let thCourse = document.createElement("th");
-    let thGrade = document.createElement("th");
-    let thSemester = document.createElement("th");
-    let thYear = document.createElement("th");
-
-    // Insert the four titles into the heading.
-    thCourse.innerHTML = "Course";
-    thGrade.innerHTML = "Grade";
-    thSemester.innerHTML = "Semester";
-    thYear.innerHTML = "Year";
-
-    // Append the created data into the HTML tags we created.
-    table.appendChild(tr);
-    tr.appendChild(thCourse);
-    tr.appendChild(thGrade);
-    tr.appendChild(thSemester);
-    tr.appendChild(thYear);
-    
-    // For loop to create HTML tags and populate them row by row.
-    for (var i = 0; i < myArray.length; i++) {
-        // Create a new row element and four data elements.
+        // Refer to the table tag.
+        let table = document.getElementById("class-table");
+        // Create the table elements for the header of the table.
         let tr = document.createElement("tr");
-        let tdCourse = document.createElement("td");
-        let tdGrade = document.createElement("td");
-        let tdSemester = document.createElement("td");
-        let tdYear = document.createElement("td");
-        // Populate them with data from the parsed JSON file.
-        tdCourse.innerHTML = myArray[i].class.title;
-        tdGrade.innerHTML = myArray[i].class.grade;
-        tdSemester.innerHTML = myArray[i].class.semester;
-        tdYear.innerHTML = myArray[i].class.year;
-        // Insert the data into our table tag.
+        let thCourse = document.createElement("th");
+        let thGrade = document.createElement("th");
+        let thSemester = document.createElement("th");
+        let thYear = document.createElement("th");
+
+        // Insert the four titles into the heading.
+        thCourse.innerHTML = "Course";
+        thGrade.innerHTML = "Grade";
+        thSemester.innerHTML = "Semester";
+        thYear.innerHTML = "Year";
+
+        // Append the created data into the HTML tags we created.
         table.appendChild(tr);
-        tr.appendChild(tdCourse);
-        tr.appendChild(tdGrade);
-        tr.appendChild(tdSemester);
-        tr.appendChild(tdYear);
+        tr.appendChild(thCourse);
+        tr.appendChild(thGrade);
+        tr.appendChild(thSemester);
+        tr.appendChild(thYear);
+        
+        // For loop to create HTML tags and populate them row by row.
+        for (var i = 0; i < myArray.length; i++) {
+            // Create a new row element and four data elements.
+            let tr = document.createElement("tr");
+            let tdCourse = document.createElement("td");
+            let tdGrade = document.createElement("td");
+            let tdSemester = document.createElement("td");
+            let tdYear = document.createElement("td");
+            // Populate them with data from the parsed JSON file.
+            tdCourse.innerHTML = myArray[i].class.title;
+            tdGrade.innerHTML = myArray[i].class.grade;
+            tdSemester.innerHTML = myArray[i].class.semester;
+            tdYear.innerHTML = myArray[i].class.year;
+            // Insert the data into our table tag.
+            table.appendChild(tr);
+            tr.appendChild(tdCourse);
+            tr.appendChild(tdGrade);
+            tr.appendChild(tdSemester);
+            tr.appendChild(tdYear);
+        }
+        // Add the data we just populated into the HTML document.
+        document.getElementById("class-table").innerHTML = table.innerHTML;
     }
-    // Add the data we just populated into the HTML document.
-    document.getElementById("class-table").innerHTML = table.innerHTML;
-}
-}
+};
+
+// This function selects any element using its class name.
+let selectElement = (s) => document.querySelector(s);
+// Select all the link elements in the nav.
+let links = document.querySelectorAll(".nav-link");
+
+// Add a click event listener to the menu icon.
+selectElement(".menu-icon").addEventListener("click", () => {
+    // Once clicked, enable the class active and switch in order to show the menu.
+    selectElement(".nav-list").classList.toggle("active");
+    selectElement(".menu-icon").classList.toggle("switch");
+});
+
+// Go through each link in the nav and toggle them back in order to close the menu once a link is chosen.
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        selectElement(".nav-list").classList.toggle("active");
+        selectElement(".menu-icon").classList.toggle("switch");
+    });
+});
