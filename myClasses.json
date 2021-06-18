@@ -58,7 +58,7 @@
                 "semester" : "Fall",
                 "year" : 2020
             }
-        }, {
+        },{
             "class" : {
                 "title" : "Server-Side Web Development",
                 "grade" : "B",
